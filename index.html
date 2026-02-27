@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Maison — Fine Dining</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#b8860b',
+            dark: '#1a1a2e',
+            darker: '#16213e',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-dark text-white font-body">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-darker/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-display font-bold text-brand tracking-wide">
+        La Maison
+      </a>
+      <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+        <li><a href="#hero" class="hover:text-brand transition">Home</a></li>
+        <li><a href="#menu" class="hover:text-brand transition">Menu</a></li>
+        <li><a href="#checkout" class="hover:text-brand transition">Cart</a></li>
+      </ul>
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-gray-300 hover:text-brand transition"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-darker border-t border-white/10 px-6 pb-4">
+      <ul class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <li><a href="#hero" class="hover:text-brand transition">Home</a></li>
+        <li><a href="#menu" class="hover:text-brand transition">Menu</a></li>
+        <li><a href="#checkout" class="hover:text-brand transition">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80"
+        alt="Delicious food spread"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/50 to-dark"></div>
+    </div>
+    <div class="relative z-10 text-center px-6 max-w-3xl">
+      <p class="text-brand uppercase tracking-[0.3em] text-sm mb-4 font-medium">
+        Est. 2024
+      </p>
+      <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight mb-6">
+        A Taste of <span class="text-brand">Elegance</span>
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
+        Experience exquisite flavours crafted by world-class chefs, served in an atmosphere of timeless sophistication.
+      </p>
+      <a
+        href="#menu"
+        class="inline-block bg-brand hover:bg-yellow-600 text-dark font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg shadow-brand/25"
+      >
+        Explore Our Menu
+      </a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-brand uppercase tracking-[0.25em] text-sm font-medium mb-2">
+          Our Specialties
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold">
+          The Menu
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Item 1 -->
+        <div class="menu-card group bg-darker rounded-2xl overflow-hidden border border-white/5 hover:border-brand/30 transition-all duration-300">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"
+              alt="Garden Fresh Salad"
+              class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold mb-1">Garden Fresh Salad</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Crisp greens, cherry tomatoes, avocado &amp; citrus vinaigrette.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-brand font-bold text-xl">$12.99</span>
+              <button
+                class="add-to-cart bg-brand/10 text-brand border border-brand/30 hover:bg-brand hover:text-dark font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
+                data-name="Garden Fresh Salad"
+                data-price="12.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-card group bg-darker rounded-2xl overflow-hidden border border-white/5 hover:border-brand/30 transition-all duration-300">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+              alt="Truffle Margherita Pizza"
+              class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold mb-1">Truffle Margherita</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              San Marzano tomatoes, fresh mozzarella &amp; black truffle oil.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-brand font-bold text-xl">$18.49</span>
+              <button
+                class="add-to-cart bg-brand/10 text-brand border border-brand/30 hover:bg-brand hover:text-dark font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
+                data-name="Truffle Margherita"
+                data-price="18.49"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-card group bg-darker rounded-2xl overflow-hidden border border-white/5 hover:border-brand/30 transition-all duration-300">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=80"
+              alt="Wagyu Steak"
+              class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold mb-1">Wagyu Steak</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              A5 grade wagyu, roasted garlic butter &amp; seasonal vegetables.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-brand font-bold text-xl">$42.00</span>
+              <button
+                class="add-to-cart bg-brand/10 text-brand border border-brand/30 hover:bg-brand hover:text-dark font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
+                data-name="Wagyu Steak"
+                data-price="42.00"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-card group bg-darker rounded-2xl overflow-hidden border border-white/5 hover:border-brand/30 transition-all duration-300">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?auto=format&fit=crop&w=600&q=80"
+              alt="Crème Brûlée"
+              class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold mb-1">Crème Brûlée</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Classic vanilla custard with a caramelised sugar crust.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-brand font-bold text-xl">$9.99</span>
+              <button
+                class="add-to-cart bg-brand/10 text-brand border border-brand/30 hover:bg-brand hover:text-dark font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
+                data-name="Crème Brûlée"
+                data-price="9.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Summary -->
+  <section id="checkout" class="py-24 px-6 bg-darker/50">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-brand uppercase tracking-[0.25em] text-sm font-medium mb-2">
+          Your Selection
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold">
+          Checkout
+        </h2>
+      </div>
+
+      <div
+        id="cart-container"
+        class="bg-dark rounded-2xl border border-white/10 p-8"
+      >
+        <div id="cart-empty" class="text-center text-gray-400 py-8">
+          <svg class="w-16 h-16 mx-auto mb-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+          </svg>
+          <p class="text-lg">Your cart is empty</p>
+          <p class="text-sm mt-1">Add items from the menu above</p>
+        </div>
+
+        <div id="cart-items" class="hidden space-y-4"></div>
+
+        <div id="cart-footer" class="hidden border-t border-white/10 mt-6 pt-6">
+          <div class="flex justify-between items-center mb-6">
+            <span class="text-gray-400 text-lg">Total</span>
+            <span id="cart-total" class="text-3xl font-bold text-brand">$0.00</span>
+          </div>
+          <button
+            id="place-order-btn"
+            class="w-full bg-brand hover:bg-yellow-600 text-dark font-bold py-3 rounded-full transition-all duration-300 shadow-lg shadow-brand/25"
+          >
+            Place Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-8 px-6 text-center text-gray-500 text-sm">
+    <p>&copy; 2024 La Maison. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
