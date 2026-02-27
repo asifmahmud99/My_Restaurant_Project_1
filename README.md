@@ -1,5 +1,8 @@
 # My_Restaurant_Project_1
 
+## 🌐 Live Demo
+[Click Here to View Live]((https://my-restaurant-project-1.vercel.app)
+
 Restaurant Web App
 
 A modern and responsive restaurant web application built with HTML, JavaScript, and Tailwind CSS.  
